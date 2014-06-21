@@ -9,13 +9,13 @@ This bower package depends on `pocketsphinx.js-lib` which contains the library, 
 
 # 1. usage
 
-For general usage of `pocketsphinx.js`, see https://github.com/syl22-00/pocketsphinx.js/blob/master/README.md.
+For general usage see the docs of the base library (once installed, in `bower_components/pocketsphinx.js-lib/README.md`).
 
 Following are the specific for that model.
 
 a. Loading the acoustic model
 
-The files must be loaded in the recognizer, with a call to the "load" command and the following file names:
+The files must be loaded in the recognizer, with a call to the "load" command prior to initialization. The following file names should be used:
 
 ```javascript
 data = {command: 'load', data: ["feat.params.js", "mdef.js", "means.js", "noisedict.js", "sendump.js", "transition_matrices.js", "variances.js"].map(function(x) {return "../pocketsphinx.js-en_US-hub4wsj_sc_8k/" + x;}
@@ -23,7 +23,7 @@ data = {command: 'load', data: ["feat.params.js", "mdef.js", "means.js", "noised
 
 b. Initializing the recognizer
 
-At init time, a config object that contains:
+At init time, this model can be selected with:
 
 ```javascript
 ["-hmm", "hub4wsj_sc_8k"]
